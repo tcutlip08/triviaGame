@@ -1,1 +1,9 @@
-console.log("Josh is gay");
+
+
+
+
+
+
+function hideButton(id){
+    $(id).css("display", "none");
+}
