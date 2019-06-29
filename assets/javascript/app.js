@@ -1,16 +1,43 @@
 $(function () {
     var questions = {
-        adding: { question: "2+2", answer: "4" },
-        subtraction: { question: "5-2", answer: "3" },
-        multiplication: { question: "4*6", answer: "24" },
-        division: { question: "12/4", answer: "3" },
-        fraction: {question: "10/4", answer: "5/2" },
-        percentages: {question: "20*10%", answer: "2"}
+        adding: {
+            100: { question: "2+2", answer: "4" },
+            200: {},
+            300: {}
+        },
+        subtraction: {
+            100: { question: "5-2", answer: "3" },
+            200: {},
+            300: {}
+        },
+        multiplication: {
+            100: { question: "4*6", answer: "24" },
+            200: {},
+            300: {}
+        },
+        division: {
+            100: { question: "12/4", answer: "3" },
+            200: {},
+            300: {}
+        }
     };
-    console.log(questions)
+
+
+
+});
+
+
+
+$("#add1").on("click", function(){
+    console.log("hello");
 });
 
 function disableButton(id) {
-    $(id).css("display", "none");
+    setTimeout(function(){
+        $(id).css("display", "none");
+    }, 500);
+}
 
+function displayQuestionAnswers (id){
+    
 }
