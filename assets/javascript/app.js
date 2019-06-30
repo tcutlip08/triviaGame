@@ -1,24 +1,24 @@
 $(function () {
     var questions = {
         adding: {
-            100: { question: "2+2", answer: "4" },
-            200: {},
-            300: {}
+            a100: { question: "2+2", answer: "4" },
+            a200: {},
+            a300: {}
         },
         subtraction: {
-            100: { question: "5-2", answer: "3" },
-            200: {},
-            300: {}
+            s100: { question: "5-2", answer: "3" },
+            s200: {},
+            s300: {}
         },
         multiplication: {
-            100: { question: "4*6", answer: "24" },
-            200: {},
-            300: {}
+            m100: { question: "4*6", answer: "24" },
+            m200: {},
+            m300: {}
         },
         division: {
-            100: { question: "12/4", answer: "3" },
-            200: {},
-            300: {}
+            d100: { question: "12/4", answer: "3" },
+            d200: {},
+            d300: {}
         }
     };
     $(document).on("click", ".question", function () {
@@ -39,7 +39,7 @@ function displayQuestionAnswers(id, questions) {
     if (id[0] === "a") {
         var i = id.length - 1;
         if (id[i] === "1") {
-            $("#option1").text("Fuck");
+            $("#question").text(questions.adding.a100.question);
         }
     }
 }
