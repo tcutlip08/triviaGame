@@ -3,9 +3,20 @@
 <head>
     <title>Jeopardy</title>
     <link rel="stylesheet" href="assets\css\reset.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets\css\style.css">
 </head>
 
@@ -42,66 +53,103 @@
         <div class="row questions">
             <div class="col">
                 <div class="row" id="row1">
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#add1')" id="add1"
-                                value="100">100</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg" onclick="disableButton('#add1')" id="add1"
+                            value="100">100</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#sub1')" id="sub1"
-                                value="100">100</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#sub1')" data-toggle="modal" data-target=".bd-example-modal-lg"
+                            id="sub1" value="100">100</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#mult1')" id="mult1"
-                                value="100">100</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#mult1')" id="mult1" value="100">100</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#div1')" id="div1"
-                                value="100">100</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#div1')" id="div1" value="100">100</button>
                     </div>
                 </div>
                 <br>
                 <div class="row" id="row2">
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#add2')" id="add2"
-                                value="200">200</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#add2')" id="add2" value="200">200</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#sub2')" id="sub2"
-                                value="200">200</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#sub2')" id="sub2" value="200">200</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#mult2')" id="mult2"
-                                value="200">200</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#mult2')" id="mult2" value="200">200</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#div2')" id="div2"
-                                value="200">200</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#div2')" id="div2" value="200">200</button>
                     </div>
                 </div>
                 <br>
                 <div class="row" id="row3">
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#add3')" id="add3"
-                                value="300">300</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#add3')" id="add3" value="300">300</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#sub3')" id="sub3"
-                                value="300">300</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#sub3')" id="sub3" value="300">300</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#mult3')" id="mult3"
-                                value="300">300</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#mult3')" id="mult3" value="300">300</button>
                     </div>
-                    <div class="col-sm-3"><a href="displayQuestions.html" target="_blank"><button type="button"
-                                class="btn btn-secondary question" onclick="disableButton('#div3')" id="div3"
-                                value="300">300</button></a>
+                    <div class="col-sm-3"><button type="button" class="btn btn-secondary question"
+                            onclick="disableButton('#div3')" id="div3" value="300">300</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="assets\javascript\app.js"></script>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row" id="header">
+                        <div class="col-md-12">
+                            <h1 id="title">Jeopardy</h1>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Points the questions is worth
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="question">Question</h3>
+                            <hr>
+                        </div>
+                        <div class="col-md-3">
+                            <h3 id="timer">20 Sec</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-secondary" id="option1">Answer</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-secondary" id="option2">Answer</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-secondary" id="option3">Answer</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-secondary" id="option4">Answer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
+
 
 </html>

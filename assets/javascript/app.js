@@ -31,9 +31,7 @@ $(function () {
 
 
 function disableButton(id) {
-    setTimeout(function () {
-        $(id).css("display", "none");
-    }, 500);
+    $(id).css("display", "none");
 }
 
 function displayQuestionAnswers(id, questions) {
@@ -41,10 +39,7 @@ function displayQuestionAnswers(id, questions) {
     if (id[0] === "a") {
         var i = id.length - 1;
         if (id[i] === "1") {
-            
-            $(function (){
-                $("#option1").text("Fuck");
-            });
+            $("#option1").text("Fuck");
         }
     }
 }
