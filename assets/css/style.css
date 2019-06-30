@@ -5,3 +5,8 @@ body {
 .btn {
     width: 100%;
 }
+
+#timer {
+    border-color: black;
+    border-style: thin;
+}
