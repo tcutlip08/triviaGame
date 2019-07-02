@@ -30,6 +30,7 @@ $(function () {
 });
 
 var totalPoints = 0;
+var correct = 0;
 
 function createRandomAnswers(id, answers, valuesIncluded, i, j) {
     while (typeof answers[j] === "string") {
@@ -79,11 +80,13 @@ function answerClicks(answers, id) {
         test = parseInt($("#option1").val());
         var bool = testIfTheyAreRight(test, answers);
         if (bool === true) {
+            correct++;
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
             var points = parseInt($('button[type=button][id=' + id + ']').val());
             totalPoints = totalPoints + points;
             $("#displayPoints").text(totalPoints);
+            $("#correctAnswers").text(correct);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -97,11 +100,13 @@ function answerClicks(answers, id) {
         test = parseInt($("#option2").val());
         var bool = testIfTheyAreRight(test, answers);
         if (bool === true) {
+            correct++;
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
             var points = parseInt($('button[type=button][id=' + id + ']').val());
             totalPoints = totalPoints + points;
             $("#displayPoints").text(totalPoints);
+            $("#correctAnswers").text(correct);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -115,11 +120,13 @@ function answerClicks(answers, id) {
         test = parseInt($("#option3").val());
         var bool = testIfTheyAreRight(test, answers);
         if (bool === true) {
+            correct++;
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
             var points = parseInt($('button[type=button][id=' + id + ']').val());
             totalPoints = totalPoints + points;
             $("#displayPoints").text(totalPoints);
+            $("#correctAnswers").text(correct);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -133,11 +140,13 @@ function answerClicks(answers, id) {
         test = parseInt($("#option4").val());
         var bool = testIfTheyAreRight(test, answers);
         if (bool === true) {
+            correct++;
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
             var points = parseInt($('button[type=button][id=' + id + ']').val());
             totalPoints = totalPoints + points;
             $("#displayPoints").text(totalPoints);
+            $("#correctAnswers").text(correct);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -177,7 +186,7 @@ var number;
 var intervalId;
 
 function run(answers) {
-    number = 20;
+    number = 10;
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000, answers);
 }
