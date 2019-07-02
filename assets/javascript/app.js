@@ -21,6 +21,7 @@ $(function () {
             d300: { question: "608/8", answer: "76" }
         }
     };
+
     $(document).on("click", ".question", function () {
         enableOptionButtons();
         displayQuestionCreateAnswers($(this).attr("id"), questions);
@@ -79,10 +80,12 @@ function answerClicks(answers) {
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         } else {
             $(this).attr("class", "btn btn-danger");
             $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         }
     });
 
@@ -92,10 +95,12 @@ function answerClicks(answers) {
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         } else {
             $(this).attr("class", "btn btn-danger");
             $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         }
     });
 
@@ -105,10 +110,12 @@ function answerClicks(answers) {
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         } else {
             $(this).attr("class", "btn btn-danger");
             $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         }
     });
 
@@ -118,10 +125,12 @@ function answerClicks(answers) {
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         } else {
             $(this).attr("class", "btn btn-danger");
             $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
+            stop();
         }
     });
 }
@@ -131,6 +140,10 @@ function disableOptionButtons() {
     $("#option2").prop('disabled', true);
     $("#option3").prop('disabled', true);
     $("#option4").prop('disabled', true);
+
+    setInterval( function() { 
+        $('#myModal').modal('toggle');
+    }, 500 );
 };
 
 function enableOptionButtons() {
@@ -146,6 +159,30 @@ function enableOptionButtons() {
 
 function disableButton(id) {
     $(id).css("display", "none");
+}
+var number;
+var intervalId;
+
+$("#resume").on("click", run);
+function run(answers) {
+    number = 2;
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000, answers);
+}
+
+function decrement(answers) {
+    number--;
+    $("#timer").html("<h3>" + number + "</h3>");
+
+    if (number === 0) {
+        stop();
+        disableOptionButtons();
+        $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
+    }
+}
+
+function stop() {
+    clearInterval(intervalId);
 }
 
 function displayQuestionCreateAnswers(id, questions) {
@@ -165,7 +202,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
+            run(answers);
             answerClicks(answers);
         } else if (id[i] === "2") {
             $("#question").text(questions.addition.a200.question);
@@ -179,7 +216,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
+            run(answers);
             answerClicks(answers);
         } else if (id[i] === "3") {
             $("#question").text(questions.addition.a300.question);
@@ -193,7 +230,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
+            run(answers);
             answerClicks(answers);
         } else {
             console.log("Something Got Fucked");
