@@ -81,6 +81,7 @@ function answerClicks(answers) {
             disableOptionButtons();
         } else {
             $(this).attr("class", "btn btn-danger");
+            $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
         }
     });
@@ -93,6 +94,7 @@ function answerClicks(answers) {
             disableOptionButtons();
         } else {
             $(this).attr("class", "btn btn-danger");
+            $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
         }
     });
@@ -105,6 +107,7 @@ function answerClicks(answers) {
             disableOptionButtons();
         } else {
             $(this).attr("class", "btn btn-danger");
+            $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
         }
     });
@@ -117,6 +120,7 @@ function answerClicks(answers) {
             disableOptionButtons();
         } else {
             $(this).attr("class", "btn btn-danger");
+            $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
             disableOptionButtons();
         }
     });
