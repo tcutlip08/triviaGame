@@ -8,7 +8,7 @@ $(function () {
         subtraction: {
             s100: { question: "5-2", answer: "3" },
             s200: { question: "31-12", answer: "19" },
-            s300: { question: "101-33", answer: "68" }
+            s300: { question: "101-32", answer: "69" }
         },
         multiplication: {
             m100: { question: "4*3", answer: "12" },
