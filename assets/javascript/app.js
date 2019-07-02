@@ -189,6 +189,7 @@ function decrement(answers) {
     if (number === 0) {
         stop();
         disableOptionButtons();
+        $("#question").text("Times Up!");
         $('button[type=button][value=' + answers[0] + ']').attr("class", "btn btn-success");
     }
 }
@@ -214,6 +215,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("100");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "2") {
@@ -228,6 +230,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("200");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "3") {
@@ -242,6 +245,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("300");
             run(answers);
             answerClicks(answers, id);
         } else {
@@ -262,6 +266,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("100");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "2") {
@@ -276,6 +281,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("200");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "3") {
@@ -290,6 +296,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("300");
             run(answers);
             answerClicks(answers, id);
         } else {
@@ -310,6 +317,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("100");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "2") {
@@ -324,6 +332,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("200");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "3") {
@@ -338,6 +347,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("300");
             run(answers);
             answerClicks(answers, id);
         } else {
@@ -358,6 +368,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("100");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "2") {
@@ -372,6 +383,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("200");
             run(answers);
             answerClicks(answers, id);
         } else if (id[i] === "3") {
@@ -386,6 +398,7 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
+            $("#questionPoints").text("300");
             run(answers);
             answerClicks(answers, id);
         } else {
@@ -393,3 +406,7 @@ function displayQuestionCreateAnswers(id, questions) {
         }
     }
 }
+
+$("#reset").on("click", function(){
+    window.location.reload();
+});
