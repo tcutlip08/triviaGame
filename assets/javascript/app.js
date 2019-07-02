@@ -68,6 +68,8 @@ function displayRandomAnswers(answers) {
 }
 
 function testIfTheyAreRight(test, answers) {
+    console.log("test: " + test);
+    console.log("answsers: " + answers[0]);
     if (test === answers[0]) {
         return true;
     } else {
@@ -322,6 +324,7 @@ function displayQuestionCreateAnswers(id, questions) {
                 answers[0] = parseInt(questions.multiplication.m100.answer);
 
                 valuesIncluded.push(createRandomAnswers(id, answers, valuesIncluded, i, j));
+
             }
 
             console.log(answers.join(", "));
@@ -416,6 +419,6 @@ function displayQuestionCreateAnswers(id, questions) {
     }
 }
 
-$("#reset").on("click", function(){
+$("#reset").on("click", function () {
     window.location.reload();
 });
