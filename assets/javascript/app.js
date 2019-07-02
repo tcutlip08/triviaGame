@@ -29,6 +29,7 @@ $(function () {
 
 });
 
+var totalPoints = 0;
 
 function createRandomAnswers(id, answers, valuesIncluded, i, j) {
     while (typeof answers[j] === "string") {
@@ -73,13 +74,16 @@ function testIfTheyAreRight(test, answers) {
     }
 }
 
-function answerClicks(answers) {
+function answerClicks(answers, id) {
     $("#option1").on("click", function () {
         test = parseInt($("#option1").val());
         var bool = testIfTheyAreRight(test, answers);
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            var points = parseInt($('button[type=button][id=' + id + ']').val());
+            totalPoints = totalPoints + points;
+            $("#displayPoints").text(totalPoints);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -95,6 +99,9 @@ function answerClicks(answers) {
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            var points = parseInt($('button[type=button][id=' + id + ']').val());
+            totalPoints = totalPoints + points;
+            $("#displayPoints").text(totalPoints);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -110,6 +117,9 @@ function answerClicks(answers) {
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            var points = parseInt($('button[type=button][id=' + id + ']').val());
+            totalPoints = totalPoints + points;
+            $("#displayPoints").text(totalPoints);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -125,6 +135,9 @@ function answerClicks(answers) {
         if (bool === true) {
             $(this).attr("class", "btn btn-success");
             disableOptionButtons();
+            var points = parseInt($('button[type=button][id=' + id + ']').val());
+            totalPoints = totalPoints + points;
+            $("#displayPoints").text(totalPoints);
             stop();
         } else {
             $(this).attr("class", "btn btn-danger");
@@ -141,9 +154,9 @@ function disableOptionButtons() {
     $("#option3").prop('disabled', true);
     $("#option4").prop('disabled', true);
 
-    setInterval( function() { 
-        $('#myModal').modal('toggle');
-    }, 500 );
+    setTimeout(function () {
+        $('.modal').modal('toggle');
+    }, 1000);
 };
 
 function enableOptionButtons() {
@@ -163,9 +176,8 @@ function disableButton(id) {
 var number;
 var intervalId;
 
-$("#resume").on("click", run);
 function run(answers) {
-    number = 2;
+    number = 20;
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000, answers);
 }
@@ -203,7 +215,7 @@ function displayQuestionCreateAnswers(id, questions) {
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
             run(answers);
-            answerClicks(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "2") {
             $("#question").text(questions.addition.a200.question);
             var answers = ["1", "2", "3", "4"];
@@ -217,7 +229,7 @@ function displayQuestionCreateAnswers(id, questions) {
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
             run(answers);
-            answerClicks(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "3") {
             $("#question").text(questions.addition.a300.question);
             var answers = ["1", "2", "3", "4"];
@@ -231,7 +243,7 @@ function displayQuestionCreateAnswers(id, questions) {
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
             run(answers);
-            answerClicks(answers);
+            answerClicks(answers, id);
         } else {
             console.log("Something Got Fucked");
         }
@@ -250,8 +262,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "2") {
             $("#question").text(questions.subtraction.s200.question);
             var answers = ["1", "2", "3", "4"];
@@ -264,8 +276,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "3") {
             $("#question").text(questions.subtraction.s300.question);
             var answers = ["1", "2", "3", "4"];
@@ -278,8 +290,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else {
             console.log("Something Got Fucked");
         }
@@ -298,8 +310,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "2") {
             $("#question").text(questions.multiplication.m200.question);
             var answers = ["1", "2", "3", "4"];
@@ -312,8 +324,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "3") {
             $("#question").text(questions.multiplication.m300.question);
             var answers = ["1", "2", "3", "4"];
@@ -326,8 +338,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else {
             console.log("Something Got Fucked");
         }
@@ -346,8 +358,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "2") {
             $("#question").text(questions.division.d200.question);
             var answers = ["1", "2", "3", "4"];
@@ -360,8 +372,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else if (id[i] === "3") {
             $("#question").text(questions.division.d300.question);
             var answers = ["1", "2", "3", "4"];
@@ -374,8 +386,8 @@ function displayQuestionCreateAnswers(id, questions) {
 
             console.log(answers.join(", "));
             displayRandomAnswers(answers);
-
-            answerClicks(answers);
+            run(answers);
+            answerClicks(answers, id);
         } else {
             console.log("Something Got Fucked");
         }
